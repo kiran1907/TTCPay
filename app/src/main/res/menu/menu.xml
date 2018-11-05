@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/home"  android:title="Home"/>
+    <item android:id="@+id/buyTickets" android:title="Buy Tickets"/>
+    <item android:id="@+id/useTickets" android:title="Use Tickets"/>
+    <item android:id="@+id/transitApp" android:title="Google/Transit App"/>
+    <item android:id="@+id/moreInfo" android:title="More Information"/>
+    <item android:id="@+id/settings" android:title="Settings"/>
+    <item android:id="@+id/loginSignout" android:title="Sign Out"/>
+
+</menu>
