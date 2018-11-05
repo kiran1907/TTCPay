@@ -11,6 +11,7 @@ public class UserTypeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_type);
+        getSupportActionBar().hide(); //hide the title bar
     }
 
     public void proceedButtonClick(View view){

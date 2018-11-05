@@ -3,6 +3,7 @@ package com.example.a300985590.ttcpay;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Window;
 
 public class SplashScreen extends AppCompatActivity {
 
@@ -10,6 +11,8 @@ public class SplashScreen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.splash_screen);
+
+        getSupportActionBar().hide(); //hide the title bar
 
         Thread th=new Thread()
         {
