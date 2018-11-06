@@ -19,7 +19,13 @@
         <activity android:name=".LoginActivity" />
         <activity android:name=".RegistrationActivity" />
         <activity android:name=".MainActivity" />
-        <activity android:name=".UserTypeActivity"></activity>
+        <activity android:name=".UserTypeActivity" />
+        <activity android:name=".BuyTicketActivity" />
+        <activity android:name=".BuyPassActivity" />
+        <activity android:name=".AvailableTicketActivity" />
+        <activity android:name=".AvailablePassesActivity" />
+        <activity android:name=".MoreInfoActivity" />
+        <activity android:name=".SettingsActivity"></activity>
     </application>
 
 </manifest>

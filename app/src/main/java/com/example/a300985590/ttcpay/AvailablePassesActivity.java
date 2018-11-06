@@ -7,12 +7,10 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+public class AvailablePassesActivity extends AppCompatActivity {
+
 
     private DrawerLayout dl;
     private ActionBarDrawerToggle t;
@@ -21,9 +19,9 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_available_passes);
 
-        dl = (DrawerLayout)findViewById(R.id.activity_main);
+        dl = (DrawerLayout)findViewById(R.id.activity_avail_pass);
         t = new ActionBarDrawerToggle(this, dl,R.string.Open, R.string.Close);
 
         dl.addDrawerListener(t);
@@ -87,33 +85,5 @@ public class MainActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
-
-    public void chooseOptionClick(View view){
-        Intent intent=null;
-
-        switch (view.getId()) {
-            case R.id.buyTicketBtn:
-
-                intent=new Intent(getApplicationContext(),BuyTicketActivity.class);
-                startActivity(intent);
-
-                break;
-            case R.id.buyPassBtn:
-                intent=new Intent(getApplicationContext(),BuyPassActivity.class);
-                startActivity(intent);
-                break;
-            case R.id.availTicketBtn:
-                intent=new Intent(getApplicationContext(),AvailableTicketActivity.class);
-                startActivity(intent);
-                break;
-            case R.id.availPassBtn:
-                intent=new Intent(getApplicationContext(),AvailablePassesActivity.class);
-                startActivity(intent);
-                break;
-
-        }
-
-    }
-
 
 }
