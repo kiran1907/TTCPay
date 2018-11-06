@@ -10,18 +10,36 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
     private DrawerLayout dl;
     private ActionBarDrawerToggle t;
+    private Session session;//global variable
+
+    private TextView usernameTextView;
+
+
+
+
     private NavigationView nv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        usernameTextView=(TextView)findViewById(R.id.usernameTextView);
+        session = new Session(this);
+
+        String userName=session.getusename();
+
+        if("GUEST".equalsIgnoreCase(userName))
+            usernameTextView.setText("Welcome Guest User!");
+        else
+            usernameTextView.setText("Welcome User Name!");
 
         dl = (DrawerLayout)findViewById(R.id.activity_main);
         t = new ActionBarDrawerToggle(this, dl,R.string.Open, R.string.Close);

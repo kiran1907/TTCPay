@@ -3,12 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/lightGrey"
     tools:context=".UserTypeActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#e8e8e7"
         android:orientation="vertical"
         style="@style/AppTheme"
         android:weightSum="1"
@@ -36,7 +36,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal|center_vertical"
                 android:layout_marginLeft="25dp"
-                android:text="Choose User Type"
+                android:text="Welcome!"
                 android:textColor="#ffffff"
                 android:textSize="24dp"
                 android:textStyle="bold" />
@@ -47,9 +47,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="30dp"
-            android:layout_marginLeft="16dp"
+            android:layout_marginLeft="70dp"
             android:layout_marginRight="16dp"
-            android:background="@drawable/greybackground"
+            android:layout_marginTop="100dp"
             android:gravity="center_horizontal"
             android:orientation="vertical"
             android:weightSum="1"
@@ -57,50 +57,47 @@
             android:layout_alignEnd="@+id/linearLayout2"
             android:layout_alignParentStart="true">
 
-
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Please choose user type"
+                android:id="@+id/usernameTextView"
+                android:text="How would you like to proceed?"
+                android:textColor="@color/black"
+                android:textSize="@dimen/activity_horizontal_margin"
                 android:layout_marginTop="50dp"
                 />
     <RadioGroup
         android:layout_width="wrap_content"
+        android:id="@+id/userRadioGroup"
         android:layout_height="match_parent" android:orientation="horizontal"
-        android:layout_marginTop="30dp"
-        >
-
+        android:layout_marginTop="30dp">
 
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
-            android:text="Guest"/>
+            android:id="@+id/guestUser"
+            android:checked="true"
+            android:text="Guest User"/>
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:id="@+id/registerUser"
             android:layout_marginLeft="20dp"
-            android:text="Registered"/>
-
+            android:text="Registered User"/>
 
     </RadioGroup>
-
             <Button android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:text="Proceed"
                 android:id="@+id/proceed"
                 android:layout_marginTop="20dp"
-                android:width="200dp"
+                android:width="250dp"
                 android:textColor="#fff"
                 android:onClick="proceedButtonClick"
                 android:textSize="13dp"
                 android:background="#ff0000" />
 
-
             </LinearLayout>
-
-
-
 
         </LinearLayout>
 </RelativeLayout>
