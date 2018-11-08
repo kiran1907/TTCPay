@@ -25,7 +25,8 @@
         <activity android:name=".AvailableTicketActivity" />
         <activity android:name=".AvailablePassesActivity" />
         <activity android:name=".MoreInfoActivity" />
-        <activity android:name=".SettingsActivity"></activity>
+        <activity android:name=".SettingsActivity" />
+        <activity android:name=".CategoriesActivity"></activity>
     </application>
 
 </manifest>
