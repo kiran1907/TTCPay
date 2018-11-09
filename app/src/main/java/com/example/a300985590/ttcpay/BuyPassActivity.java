@@ -8,6 +8,7 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 
 public class BuyPassActivity extends AppCompatActivity {
 
@@ -73,6 +74,40 @@ public class BuyPassActivity extends AppCompatActivity {
 
             }
         });
+
+    }
+    public void openPassCategory(View view){
+        Intent intent = new Intent(BuyPassActivity.this, PassCategoryActivity.class);
+        Bundle b = new Bundle();
+        double adultMonthlyPassPrice=150, adultDailyPassPrice=10, adultWeeklyPassPrice=45;
+        double studentMonthlyPassPrice=117, studentDailyPassPrice=6, studentWeeklyPassPrice=35;
+        double seniorMonthlyPassPrice=100, seniorDailyPassPrice=5, seniorWeeklyPassPrice=30;
+
+
+        switch (view.getId()) {
+            case R.id.buyAdultPassBtn:
+                b.putDouble("monthlyPrice",adultMonthlyPassPrice);
+                b.putDouble("weeklyPrice",adultWeeklyPassPrice);
+                b.putDouble("dailyPrice",adultDailyPassPrice);
+                intent.putExtras(b);
+                startActivity(intent);
+
+                break;
+            case R.id.buySeniorPassBtn:
+                b.putDouble("monthlyPrice",studentMonthlyPassPrice);
+                b.putDouble("weeklyPrice",studentWeeklyPassPrice);
+                b.putDouble("dailyPrice",studentDailyPassPrice);
+                intent.putExtras(b);
+                startActivity(intent);
+                break;
+            case R.id.buyStudentPassBtn:
+                b.putDouble("monthlyPrice",seniorMonthlyPassPrice);
+                b.putDouble("weeklyPrice",seniorWeeklyPassPrice);
+                b.putDouble("dailyPrice",seniorDailyPassPrice);
+                intent.putExtras(b);
+                startActivity(intent);
+                break;
+        }
 
     }
 

@@ -6,7 +6,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".BuyPassActivity">
-
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -26,7 +25,54 @@
 
     </RelativeLayout>
 
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="50dp"
+        android:stretchColumns="1">
 
+        <TableRow android:layout_marginTop="55dp">
+
+            <Button
+                android:id="@+id/buyAdultPassBtn"
+                android:layout_width="299dp"
+                android:layout_height="38dp"
+                android:layout_marginLeft="50dp"
+                android:background="@color/red"
+                android:onClick="openPassCategory"
+                android:text="Buy Adult Pass"
+                android:textColor="@color/white"
+                android:textSize="13dp" />
+        </TableRow>
+        <TableRow android:layout_marginTop="15dp">
+
+            <Button
+                android:id="@+id/buyStudentPassBtn"
+                android:layout_width="299dp"
+                android:layout_height="38dp"
+                android:layout_marginLeft="50dp"
+                android:background="@color/red2"
+                android:onClick="openPassCategory"
+                android:text="Buy Student Pass"
+                android:textColor="@color/white"
+                android:textSize="13dp" />
+
+        </TableRow>
+        <TableRow android:layout_marginTop="15dp">
+
+            <Button
+                android:id="@+id/buySeniorPassBtn"
+                android:layout_width="299dp"
+                android:layout_height="38dp"
+                android:layout_marginLeft="50dp"
+                android:background="@color/red3"
+                android:onClick="openPassCategory"
+                android:text="Buy Senior Pass"
+                android:textColor="@color/white"
+                android:textSize="13dp" />
+
+        </TableRow>
+    </TableLayout>
     <android.support.design.widget.NavigationView
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
@@ -36,6 +82,7 @@
         android:id="@+id/nv">
 
     </android.support.design.widget.NavigationView>
+
 
 
 

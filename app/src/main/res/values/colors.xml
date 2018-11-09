@@ -9,6 +9,7 @@
     <color name="lightGrey">#f3f3f3</color>
     <color name="layoutBackground">#e8e8e7</color>
     <color name="darkgrey">#A9A9A9</color>
-
+    <color name="red2">#fc5555</color>
+    <color name="red3">#fd9393</color>
 
 </resources>
