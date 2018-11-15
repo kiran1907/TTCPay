@@ -27,6 +27,15 @@ public class PassCategoryActivity extends AppCompatActivity {
 
     private EditText weekCountDisplay;
 
+    private HashMap<String,Integer> monthlyPassMap=new HashMap<String,Integer>();
+    private HashMap<String,Integer> weeklyPassMap=new HashMap<String,Integer>();
+    private HashMap<String,Integer> dailyPassMap=new HashMap<String,Integer>();
+
+    private static int monthlyPassQuantityCount=0;
+    private static int weeklyPassQuantityCount=0;
+    private static int dailyPassQuantityCount=0;
+
+
     //Menu Attributes starts
     private DrawerLayout dl;
     private ActionBarDrawerToggle t;
@@ -43,7 +52,7 @@ public class PassCategoryActivity extends AppCompatActivity {
     private Intent intent;
     private EditText dayCountDisplay;
 
-    TextView monthCatName, weekCatName, dayCatName;
+    TextView monthCatName, weekCatName, dayCatName,totalField,totalFieldPrice;
     TextView monthcategoryQuantity, weekcategoryQuantity, daycategoryQuantity;
     TextView monthcategoryPrice, weekcategoryPrice, daycategoryPrice;
     @Override
@@ -150,6 +159,8 @@ public class PassCategoryActivity extends AppCompatActivity {
             }
         });
 
+
+
     }
 
     //Required  Method for Menu
@@ -162,153 +173,110 @@ public class PassCategoryActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void minusClick(View v)
+
+    public void  plusClick(View view)
     {
 
-        switch(v.getId())
+        switch(view.getId())
         {
-            case R.id.monthlyMinus:
-                if(monthCount>0) {
-                    //monthCount=monthCount-1;
-                    --monthCount;
-
-                    if(monthCount==0)
-                    {
-                        if(shoppingLayout.getVisibility()==View.VISIBLE)
-                            shoppingLayout.setVisibility(View.INVISIBLE);
-                        if(proceedBtn.getVisibility()==View.VISIBLE)
-                            proceedBtn.setVisibility(View.INVISIBLE);
-                        if(cancelBtn.getVisibility()==View.VISIBLE)
-                            cancelBtn.setVisibility(View.INVISIBLE);
-
-                        Toast.makeText(this,"Quantity can not be less than 1.",Toast.LENGTH_SHORT).show();
-
-                        break;
-                    }
-                    else
-                    {
-
-                        monthCountDisplay.setText(monthCount + "");
-                        prepareShoppingCart("Monthly", monthCount);
-                        monthCatName.setVisibility(View.VISIBLE);
-                        monthcategoryQuantity.setVisibility(View.VISIBLE);
-                        monthcategoryPrice.setVisibility(View.VISIBLE);
-                    }
-                }
-                else {
-                   /* monthCatName.setVisibility(View.INVISIBLE);
-                    monthcategoryQuantity.setVisibility(View.INVISIBLE);
-                    monthcategoryPrice.setVisibility(View.INVISIBLE);
-                    shoppingLayout.setVisibility(View.INVISIBLE);
-                    proceedBtn.setVisibility(View.INVISIBLE);
-                    cancelBtn.setVisibility(View.INVISIBLE);*/
-
-                    if(shoppingLayout.getVisibility()==View.VISIBLE)
-                        shoppingLayout.setVisibility(View.INVISIBLE);
-                    if(proceedBtn.getVisibility()==View.VISIBLE)
-                        proceedBtn.setVisibility(View.INVISIBLE);
-                    if(cancelBtn.getVisibility()==View.VISIBLE)
-                        cancelBtn.setVisibility(View.INVISIBLE);
-
-                    Toast.makeText(this,"Quantity can not be less than 1.",Toast.LENGTH_SHORT).show();
-
-
-                    break;
-                }
-                break;
-            case R.id.weeklyMinus:
-                if(weekCount>0) {
-                    weekCount=weekCount-1;
-                    weekCountDisplay.setText(weekCount + "");
-                    prepareShoppingCart("Weekly", weekCount);
-                    weekCatName.setVisibility(View.VISIBLE);
-                    weekcategoryQuantity.setVisibility(View.VISIBLE);
-                    weekcategoryPrice.setVisibility(View.VISIBLE);
+            case R.id.monthlyPlus:
+                monthlyPassQuantityCount=monthlyPassQuantityCount+1;
+                if(monthlyPassQuantityCount>0 && monthlyPassQuantityCount<6) {
+                    monthCountDisplay.setText(monthlyPassQuantityCount + "");
+                    monthlyPassMap.put("monthlyPass", monthlyPassQuantityCount);
                 }
                 else
-                    weekCatName.setVisibility(View.INVISIBLE);
-                weekcategoryQuantity.setVisibility(View.INVISIBLE);
-                weekcategoryPrice.setVisibility(View.INVISIBLE);
+                {
+                    monthlyPassQuantityCount=monthlyPassQuantityCount-1;
+                    Toast.makeText(this,"You can only purchase maximum of 5 passes of same category.",Toast.LENGTH_SHORT).show();
 
+                }
                 break;
-            case R.id.dailyMinus:
-                if(dailyCount>0) {
-                    dailyCount=dailyCount-1;
-                    dayCountDisplay.setText(dailyCount + "");
-                    prepareShoppingCart("Day", dailyCount);
-                    dayCatName.setVisibility(View.VISIBLE);
-                    daycategoryQuantity.setVisibility(View.VISIBLE);
-                    daycategoryPrice.setVisibility(View.VISIBLE);
+            case R.id.dailyPlus:
+                dailyPassQuantityCount=dailyPassQuantityCount+1;
+                if(dailyPassQuantityCount>0 && dailyPassQuantityCount<6) {
+
+                    dayCountDisplay.setText(dailyPassQuantityCount + "");
+                    dailyPassMap.put("dailyPass", dailyPassQuantityCount);
                 }
                 else
-                    dayCatName.setVisibility(View.INVISIBLE);
-                daycategoryQuantity.setVisibility(View.INVISIBLE);
-                daycategoryPrice.setVisibility(View.INVISIBLE);
+                {
+                    dailyPassQuantityCount=dailyPassQuantityCount-1;
+                    Toast.makeText(this,"You can only purchase maximum of 5 passes of same category.",Toast.LENGTH_SHORT).show();
 
+                }
+                break;
+            case R.id.weeklyPlus:
+                weeklyPassQuantityCount=weeklyPassQuantityCount+1;
+                if(weeklyPassQuantityCount>0 && weeklyPassQuantityCount<6) {
+
+                    weekCountDisplay.setText(weeklyPassQuantityCount + "");
+                    monthlyPassMap.put("weeklyPass", weeklyPassQuantityCount);
+                }
+                else
+                {
+                    weeklyPassQuantityCount=weeklyPassQuantityCount-1;
+                    Toast.makeText(this,"You can only purchase maximum of 5 passes of same category.",Toast.LENGTH_SHORT).show();
+                }
                 break;
 
         }
-
-    }
-
-    public void monthlyCountClick(View view){
-        monthCount+=1;
-        monthCountDisplay.setText(monthCount+"");
-        if(shoppingLayout.getVisibility()==View.INVISIBLE)
-            shoppingLayout.setVisibility(View.VISIBLE);
-        if(proceedBtn.getVisibility()==View.INVISIBLE)
-            proceedBtn.setVisibility(View.VISIBLE);
-        if(cancelBtn.getVisibility()==View.INVISIBLE)
-            cancelBtn.setVisibility(View.VISIBLE);
-
-        prepareShoppingCart("Monthly",monthCount);
-
-    }
-
-    public void weeklyCountClick(View view){
-        weekCount+=1;
-        weekCountDisplay.setText(weekCount+"");
-        prepareShoppingCart("Weekly",weekCount);
-    }
-
-    public void dailyCountClick(View view){
-        dailyCount+=1;
-        dayCountDisplay.setText(dailyCount+"");
-        prepareShoppingCart("Day",dailyCount);
-    }
-    public void prepareShoppingCart(String categoryName,int count)
-    {
-        switch (categoryName)
-        {
-            case "Monthly":
-                montlyMap.put("Monthly",count);
-                break;
-            case "Weekly":
-                weeklyMap.put("Weekly",count);
-                break;
-            case "Day":
-                dailyMap.put("Day",count);
-                break;
-        }
-
         addToCart();
     }
-
-    public void showHiddenBtn()
+    public void  minusClick(View view)
     {
-        proceedBtn.setVisibility(View.VISIBLE);
-        cancelBtn.setVisibility(View.VISIBLE);
-    }
+        try {
+            switch (view.getId()) {
+                case R.id.monthlyMinus:
+                    monthlyPassQuantityCount = monthlyPassQuantityCount - 1;
+                    if (monthlyPassQuantityCount >= 0) {
+                        monthCountDisplay.setText(monthlyPassQuantityCount + "");
+                        monthlyPassMap.put("monthlyPass", monthlyPassQuantityCount);
+                    } else {
+                        monthlyPassQuantityCount = monthlyPassQuantityCount + 1;
+                        Toast.makeText(this, "Quantity can not be less than 0.", Toast.LENGTH_SHORT).show();
+                    }
+                    break;
+                case R.id.dailyMinus:
+                    dailyPassQuantityCount = dailyPassQuantityCount - 1;
+                    if (dailyPassQuantityCount >= 0) {
+                        dayCountDisplay.setText(dailyPassQuantityCount + "");
+                        dailyPassMap.put("dailyPass", dailyPassQuantityCount);
+                    } else {
+                        dailyPassQuantityCount = dailyPassQuantityCount + 1;
+                        Toast.makeText(this, "Quantity can not be less than 0.", Toast.LENGTH_SHORT).show();
 
+                    }
+                    break;
+                case R.id.weeklyMinus:
+                    weeklyPassQuantityCount = weeklyPassQuantityCount - 1;
+                    if (weeklyPassQuantityCount >= 0) {
+                        weekCountDisplay.setText(weeklyPassQuantityCount + "");
+                        monthlyPassMap.put("weeklyPass", weeklyPassQuantityCount);
+                    } else {
+                        weeklyPassQuantityCount = weeklyPassQuantityCount + 1;
+                        Toast.makeText(this, "Quantity can not be less than 0.", Toast.LENGTH_SHORT).show();
+                    }
+                    break;
+
+            }
+            addToCart();
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+    }
     public void addToCart()
     {
         shoppingLayout.removeAllViews();
-        if(montlyMap.size()>=1)
+        if(monthlyPassQuantityCount>0)
         {
             try
             {
                 LinearLayout ll=new LinearLayout(this);
                 ll.setOrientation(LinearLayout.HORIZONTAL);
+                ll.setId(R.id.layout1);
                 ll.setPadding(5,20,0,5);
 
 
@@ -321,12 +289,12 @@ public class PassCategoryActivity extends AppCompatActivity {
 
                 monthcategoryQuantity=new TextView(this);
                 monthcategoryQuantity.setWidth(400);
-                monthcategoryQuantity.setText(monthCount+"");
+                monthcategoryQuantity.setText(monthlyPassQuantityCount+"");
                 monthcategoryQuantity.setTextColor(getResources().getColor(R.color.black));
                 monthcategoryQuantity.setTextSize(18);
                 ll.addView(monthcategoryQuantity);
 
-                double totalPrice=monthCount*monthlyPrice;
+                double totalPrice=monthlyPassQuantityCount*monthlyPrice;
 
                 monthcategoryPrice=new TextView(this);
                 monthcategoryPrice.setWidth(200);
@@ -336,10 +304,6 @@ public class PassCategoryActivity extends AppCompatActivity {
                 ll.addView(monthcategoryPrice);
 
                 shoppingLayout.addView(ll);
-                monthCatName.setVisibility(View.VISIBLE);
-                monthcategoryQuantity.setVisibility(View.VISIBLE);
-                monthcategoryPrice.setVisibility(View.VISIBLE);
-                showHiddenBtn();
 
             }
             catch(Exception e)
@@ -349,17 +313,8 @@ public class PassCategoryActivity extends AppCompatActivity {
             }
 
         }
-        else
-        {
-            monthCatName.setVisibility(View.INVISIBLE);
-            monthcategoryQuantity.setVisibility(View.INVISIBLE);
-            monthcategoryPrice.setVisibility(View.INVISIBLE);
-            shoppingLayout.setVisibility(View.INVISIBLE);
-            proceedBtn.setVisibility(View.INVISIBLE);
-            cancelBtn.setVisibility(View.INVISIBLE);
 
-        }
-        if(weeklyMap.size()>=1)
+        if(weeklyPassQuantityCount>0)
         {
             try
             {
@@ -376,12 +331,12 @@ public class PassCategoryActivity extends AppCompatActivity {
 
                 weekcategoryQuantity=new TextView(this);
                 weekcategoryQuantity.setWidth(400);
-                weekcategoryQuantity.setText(weekCount+"");
+                weekcategoryQuantity.setText(weeklyPassQuantityCount+"");
                 weekcategoryQuantity.setTextColor(getResources().getColor(R.color.black));
                 weekcategoryQuantity.setTextSize(18);
                 ll.addView(weekcategoryQuantity);
 
-                double totalPrice=weekCount*weeklyPrice;
+                double totalPrice=weeklyPassQuantityCount*weeklyPrice;
 
                 weekcategoryPrice=new TextView(this);
                 weekcategoryPrice.setWidth(200);
@@ -391,11 +346,7 @@ public class PassCategoryActivity extends AppCompatActivity {
                 ll.addView(weekcategoryPrice);
 
                 shoppingLayout.addView(ll);
-                weekCatName.setVisibility(View.VISIBLE);
-                weekcategoryQuantity.setVisibility(View.VISIBLE);
-                weekcategoryPrice.setVisibility(View.VISIBLE);
 
-                showHiddenBtn();
             }
             catch(Exception e)
             {
@@ -404,7 +355,7 @@ public class PassCategoryActivity extends AppCompatActivity {
             }
 
         }
-        if(dailyMap.size()>=1)
+        if(dailyPassQuantityCount>0)
         {
             try
             {
@@ -421,12 +372,12 @@ public class PassCategoryActivity extends AppCompatActivity {
 
                 daycategoryQuantity=new TextView(this);
                 daycategoryQuantity.setWidth(400);
-                daycategoryQuantity.setText(dailyCount+"");
+                daycategoryQuantity.setText(dailyPassQuantityCount+"");
                 daycategoryQuantity.setTextColor(getResources().getColor(R.color.black));
                 daycategoryQuantity.setTextSize(18);
                 ll.addView(daycategoryQuantity);
 
-                double totalPrice=dailyCount*dailyPrice;
+                double totalPrice=dailyPassQuantityCount*dailyPrice;
 
                 daycategoryPrice=new TextView(this);
                 daycategoryPrice.setWidth(200);
@@ -436,11 +387,7 @@ public class PassCategoryActivity extends AppCompatActivity {
                 ll.addView(daycategoryPrice);
 
                 shoppingLayout.addView(ll);
-                showHiddenBtn();
 
-                dayCatName.setVisibility(View.VISIBLE);
-                daycategoryQuantity.setVisibility(View.VISIBLE);
-                daycategoryPrice.setVisibility(View.VISIBLE);
 
 
             }
@@ -452,8 +399,43 @@ public class PassCategoryActivity extends AppCompatActivity {
 
         }
 
+
+        if(monthlyPassQuantityCount>0 || weeklyPassQuantityCount>0 || dailyPassQuantityCount>0)
+        {
+
+
+            float totalPrice=Float.parseFloat( (monthlyPassQuantityCount*monthlyPrice + dailyPassQuantityCount*dailyPrice + weeklyPassQuantityCount*weeklyPrice)+"");
+
+            LinearLayout ll=new LinearLayout(this);
+            ll.setOrientation(LinearLayout.HORIZONTAL);
+            ll.setPadding(5,40,0,5);
+            totalField=new TextView(this);
+            totalField.setTextColor(getResources().getColor(R.color.black));
+            totalField.setTextSize(24);
+            totalField.setWidth(400);
+            totalField.setText("Total Price : ");
+            ll.addView(totalField);
+
+
+            totalFieldPrice=new TextView(this);
+            totalFieldPrice.setTextColor(getResources().getColor(R.color.black));
+            totalFieldPrice.setTextSize(24);
+            totalFieldPrice.setWidth(400);
+            totalFieldPrice.setText("$"+totalPrice);
+            ll.addView(totalFieldPrice);
+
+
+            shoppingLayout.addView(ll);
+
+
+            proceedBtn.setVisibility(View.VISIBLE);
+            cancelBtn.setVisibility(View.VISIBLE);
+        }
+        else
+        {
+            proceedBtn.setVisibility(View.INVISIBLE);
+            cancelBtn.setVisibility(View.INVISIBLE);
+        }
     }
-
-
 
 }
