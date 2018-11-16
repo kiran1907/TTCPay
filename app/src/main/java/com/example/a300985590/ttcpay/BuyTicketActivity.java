@@ -21,7 +21,6 @@ public class BuyTicketActivity extends AppCompatActivity {
 
     private EditText adultCountDisplay;
     private LinearLayout shoppingLayout;
-    private static int  adultCount=0, seniorCount=0, studentCount=0;
     private Button cancelBtn, proceedBtn;
 
     private EditText seniorCountDisplay;
@@ -63,6 +62,10 @@ public class BuyTicketActivity extends AppCompatActivity {
         adultTicketMap=new HashMap<String,Integer>();
         seniorTicketMap=new HashMap<String,Integer>();
         studentTicketMap=new HashMap<String,Integer>();
+
+        adultQuantityCount=0;
+        studentQuantityCount=0;
+        seniorQuantityCount=0;
 
         //Menu Code starts
         dl = (DrawerLayout)findViewById(R.id.activity_buy_ticket);
@@ -131,9 +134,6 @@ public class BuyTicketActivity extends AppCompatActivity {
         cancelBtn=(Button)findViewById(R.id.cancelBtn);
         proceedBtn=(Button)findViewById(R.id.proceedBtn);
 
-        adultCount=0;
-        seniorCount=0;
-        studentCount=0;
 
         adultMap=new HashMap<String,Integer>();
         seniorMap=new HashMap<String,Integer>();

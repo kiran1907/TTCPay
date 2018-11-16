@@ -145,7 +145,9 @@ public class AvailableTicketActivity extends AppCompatActivity {
                         String Slecteditem= ticketType[+position];
                         //Toast.makeText(getApplicationContext(), Slecteditem, Toast.LENGTH_SHORT).show();
 
-
+                        Intent intent=null;
+                        intent=new Intent(getApplicationContext(),TicketDisplayActivity.class);
+                        startActivity(intent);
                         
 
 

@@ -27,9 +27,9 @@ public class PassCategoryActivity extends AppCompatActivity {
 
     private EditText weekCountDisplay;
 
-    private HashMap<String,Integer> monthlyPassMap=new HashMap<String,Integer>();
-    private HashMap<String,Integer> weeklyPassMap=new HashMap<String,Integer>();
-    private HashMap<String,Integer> dailyPassMap=new HashMap<String,Integer>();
+    private HashMap<String,Integer> monthlyPassMap=null;
+    private HashMap<String,Integer> weeklyPassMap=null;
+    private HashMap<String,Integer> dailyPassMap=null;
 
     private static int monthlyPassQuantityCount=0;
     private static int weeklyPassQuantityCount=0;
@@ -60,6 +60,14 @@ public class PassCategoryActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pass_category);
 
+
+        monthlyPassMap=new HashMap<String,Integer>();
+        weeklyPassMap=new HashMap<String,Integer>();
+        dailyPassMap=new HashMap<String,Integer>();
+
+        monthlyPassQuantityCount=0;
+        weeklyPassQuantityCount=0;
+        dailyPassQuantityCount=0;
 
         //Menu Code starts
         dl = (DrawerLayout)findViewById(R.id.activity_pass);
