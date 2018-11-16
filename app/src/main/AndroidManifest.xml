@@ -28,7 +28,8 @@
         <activity android:name=".SettingsActivity" />
         <activity android:name=".CategoriesActivity" />
         <activity android:name=".PassCategoryActivity" />
-        <activity android:name=".TicketDisplayActivity"></activity>
+        <activity android:name=".TicketDisplayActivity" />
+        <activity android:name=".ShowPassesActivity"></activity>
     </application>
 
 </manifest>

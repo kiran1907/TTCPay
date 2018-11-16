@@ -93,14 +93,14 @@ public class BuyPassActivity extends AppCompatActivity {
                 startActivity(intent);
 
                 break;
-            case R.id.buySeniorPassBtn:
+            case R.id.buyStudentPassBtn:
                 b.putDouble("monthlyPrice",studentMonthlyPassPrice);
                 b.putDouble("weeklyPrice",studentWeeklyPassPrice);
                 b.putDouble("dailyPrice",studentDailyPassPrice);
                 intent.putExtras(b);
                 startActivity(intent);
                 break;
-            case R.id.buyStudentPassBtn:
+            case R.id.buySeniorPassBtn:
                 b.putDouble("monthlyPrice",seniorMonthlyPassPrice);
                 b.putDouble("weeklyPrice",seniorWeeklyPassPrice);
                 b.putDouble("dailyPrice",seniorDailyPassPrice);

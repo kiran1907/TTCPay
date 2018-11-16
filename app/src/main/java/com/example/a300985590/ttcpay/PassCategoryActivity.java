@@ -165,6 +165,41 @@ public class PassCategoryActivity extends AppCompatActivity {
             }
         });
 
+        proceedBtn.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                intent=new Intent(PassCategoryActivity.this,AvailablePassesActivity.class);
+                Bundle bundle = new Bundle();
+                if(monthlyPrice == 150){
+                    bundle.putDouble("monthlyPrice",monthlyPassQuantityCount*monthlyPrice);
+                    bundle.putString("PassName","AdultPass");
+                    bundle.putInt("monthCount",monthlyPassQuantityCount);
+                    bundle.putDouble("WeeklyPrice",weeklyPassQuantityCount*weeklyPrice);
+                    bundle.putInt("weekCount",weeklyPassQuantityCount);
+                    bundle.putDouble("dailyPrice",dailyPrice*dailyPassQuantityCount);
+                    bundle.putInt("dailyCount",dailyPassQuantityCount);
+                    intent.putExtras(bundle);
+                }else if(monthlyPrice == 117){
+                    bundle.putDouble("monthlyPrice",monthlyPassQuantityCount*monthlyPrice);
+                    bundle.putString("PassName","StudentPass");
+                    bundle.putInt("monthCount",monthlyPassQuantityCount);
+                    bundle.putDouble("WeeklyPrice",weeklyPassQuantityCount*weeklyPrice);
+                    bundle.putInt("weekCount",weeklyPassQuantityCount);
+                    bundle.putDouble("dailyPrice",dailyPrice*dailyPassQuantityCount);
+                    bundle.putInt("dailyCount",dailyPassQuantityCount);
+                    intent.putExtras(bundle);
+                } else {
+                    bundle.putDouble("monthlyPrice",monthlyPassQuantityCount*monthlyPrice);
+                    bundle.putString("PassName","SeniorPass");
+                    bundle.putInt("monthCount",monthlyPassQuantityCount);
+                    bundle.putDouble("WeeklyPrice",weeklyPassQuantityCount*weeklyPrice);
+                    bundle.putInt("weekCount",weeklyPassQuantityCount);
+                    bundle.putDouble("dailyPrice",dailyPrice*dailyPassQuantityCount);
+                    bundle.putInt("dailyCount",dailyPassQuantityCount);
+                    intent.putExtras(bundle);
+                }
+                startActivity(intent);
+            }
+        });
 
 
     }

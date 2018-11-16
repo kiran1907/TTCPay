@@ -13,22 +13,33 @@
         android:background="@color/layoutBackground"
         android:theme="@style/AppTheme">
 
-
-
-
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal|center_vertical"
-            android:layout_marginLeft="80dp"
-            android:layout_marginTop="20dp"
-            android:text="Available Passes Screen!"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="10dp"
+            android:text="Click on row to view the pass"
             android:textColor="@color/black"
             android:textSize="24dp"
             android:textStyle="bold" />
 
-
     </RelativeLayout>
+    <TableLayout
+        android:id="@+id/passesTable"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="35dp"
+        android:stretchColumns="*">
+
+    </TableLayout>
+
+
+
+
 
     <android.support.design.widget.NavigationView
         android:layout_width="wrap_content"
