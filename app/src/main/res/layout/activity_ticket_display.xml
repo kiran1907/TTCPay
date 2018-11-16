@@ -5,8 +5,7 @@
     android:id="@+id/activity_avail_ticket"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AvailableTicketActivity">
-
+    tools:context=".TicketDisplayActivity">
 
 
     <RelativeLayout
@@ -17,7 +16,7 @@
 
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal|center_vertical"
             android:layout_marginLeft="80dp"
             android:layout_marginTop="20dp"
@@ -47,7 +46,6 @@
         android:id="@+id/nv">
 
     </android.support.design.widget.NavigationView>
-
 
 
 </android.support.v4.widget.DrawerLayout>

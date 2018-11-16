@@ -27,7 +27,8 @@
         <activity android:name=".MoreInfoActivity" />
         <activity android:name=".SettingsActivity" />
         <activity android:name=".CategoriesActivity" />
-        <activity android:name=".PassCategoryActivity"></activity>
+        <activity android:name=".PassCategoryActivity" />
+        <activity android:name=".TicketDisplayActivity"></activity>
     </application>
 
 </manifest>
