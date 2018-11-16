@@ -116,8 +116,6 @@ public class PassCategoryActivity extends AppCompatActivity {
         });
             //Menu code ends
 
-
-
         monthCountDisplay=(EditText)findViewById(R.id.monthlyCount);
         weekCountDisplay= (EditText)findViewById(R.id.weeklyCount);
         dayCountDisplay = (EditText)findViewById(R.id.dailyCount);
