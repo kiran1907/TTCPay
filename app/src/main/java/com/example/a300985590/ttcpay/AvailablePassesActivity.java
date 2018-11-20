@@ -90,11 +90,12 @@ public class AvailablePassesActivity extends AppCompatActivity {
     }
 
     public void startLoadData(){
-        Bundle bundle = getIntent().getExtras();
-        String passName = bundle.getString("PassName");
-        String monthly = "monthly";
-        String weekly = "weekly";
-        String daily = "daily";
+
+        final Bundle bundle = getIntent().getExtras();
+        final String passName = bundle.getString("PassName");
+        final String monthly = "monthly";
+        final String weekly = "weekly";
+        final String daily = "daily";
         monthlyPrice = bundle.getDouble("monthlyPrice");
         weeklyPrice = bundle.getDouble("WeeklyPrice");
         monthCount = bundle.getInt("monthCount");
@@ -190,8 +191,8 @@ public class AvailablePassesActivity extends AppCompatActivity {
         }
 
         passesTableLayout.addView(tableRowPass,trParams1);
-
         if(monthly == "monthly" && monthCount > 0){
+
             final TableRow tableRow = new TableRow(this);
             TableLayout.LayoutParams trParams = new TableLayout.LayoutParams(TableLayout.LayoutParams.MATCH_PARENT,
                     TableLayout.LayoutParams.WRAP_CONTENT);
@@ -208,6 +209,13 @@ public class AvailablePassesActivity extends AppCompatActivity {
                 public void onClick(View view) {
                     TableRow tr = (TableRow) view;
                     Intent intentView = new Intent(AvailablePassesActivity.this,ShowPassesActivity.class);
+
+                    Bundle bun = new Bundle();
+                    bun.putDouble("perPassMonthPrice",monthlyPrice/monthCount);
+                    bun.putInt("monthCount",monthCount);
+                    bun.putString("passName",passName);
+                    bun.putString("passCategory",monthly);
+                    intentView.putExtras(bun);
                     startActivity(intentView);
                 }
             });
@@ -231,6 +239,12 @@ public class AvailablePassesActivity extends AppCompatActivity {
                 public void onClick(View view) {
                     TableRow tr = (TableRow) view;
                     Intent intentView = new Intent(AvailablePassesActivity.this,ShowPassesActivity.class);
+                    Bundle bun = new Bundle();
+                    bun.putDouble("perPassWeekPrice", weeklyPrice/weekCount);
+                    bun.putInt("weekCount",weekCount);
+                    bun.putString("passName",passName);
+                    bun.putString("passCategory",weekly);
+                    intentView.putExtras(bun);
                     startActivity(intentView);
                 }
             });
@@ -253,6 +267,12 @@ public class AvailablePassesActivity extends AppCompatActivity {
                 public void onClick(View view) {
                     TableRow tr = (TableRow) view;
                     Intent intentView = new Intent(AvailablePassesActivity.this,ShowPassesActivity.class);
+                    Bundle bun = new Bundle();
+                    bun.putDouble("perPassDayPrice",dailyPrice/dailyCount);
+                    bun.putInt("dailyCount",dailyCount);
+                    bun.putString("passName",passName);
+                    bun.putString("passCategory",daily);
+                    intentView.putExtras(bun);
                     startActivity(intentView);
                 }
             });
