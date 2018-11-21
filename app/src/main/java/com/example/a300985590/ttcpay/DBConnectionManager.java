@@ -6,6 +6,7 @@ package com.example.a300985590.ttcpay;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
+import android.database.DatabaseErrorHandler;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -35,6 +36,11 @@ public class DBConnectionManager extends SQLiteOpenHelper {
         //create the table
         db.execSQL(tableCreatorString);
     }
+
+    public DBConnectionManager(Context context, String name, SQLiteDatabase.CursorFactory factory, int version,DatabaseErrorHandler errorHandler) {
+        super(context, name, factory, version, errorHandler);
+    }
+
     //
     // Called when the database needs to be upgraded.
     // The implementation should use this method to drop tables,
