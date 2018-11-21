@@ -18,7 +18,7 @@ public class Constant {
     public static String ADDRESS="address";
     public static String PHONE="phone";
 
-    public static String LOGIN_TABLE_QUERY="CREATE TABLE "+USER_TABLE_NAME+"("+USER_NO+" int PRIMARY KEY AUTO_INCREMENT,"+USER_ID+" TEXT,"+USER_FIRST_NAME+" text" +
+    public static String USER_TABLE_QUERY="CREATE TABLE "+USER_TABLE_NAME+"("+USER_NO+" int PRIMARY KEY AUTO_INCREMENT,"+USER_ID+" TEXT,"+USER_FIRST_NAME+" text" +
             ","+USER_LAST_NAME+" text,"+EMAIL+" text,"+PASSWORD+" text,"+ADDRESS+" text,"+PHONE+" long)";
 
 

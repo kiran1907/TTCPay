@@ -1,4 +1,4 @@
-package com.example.a300985590.ttcpay;
+package com.example.a300985590.ttcpay.database;
 /*
 * Author: Shiva Bhalla
 * Student#: 300985590
@@ -10,12 +10,11 @@ import android.database.DatabaseErrorHandler;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import com.example.a300985590.ttcpay.Util.Constant;
+
 public class DBConnectionManager extends SQLiteOpenHelper {
 
 
-    //database name and version
-    private static final String DATABASE_NAME = "TTCPayDatabase";
-    private static final int DATABASE_VERSION = 1;
     // table name and table creator string (SQL statement to create the table)
     // should be set from within main activity
     private static String tableName;
@@ -25,7 +24,7 @@ public class DBConnectionManager extends SQLiteOpenHelper {
     // no-argument constructor
     public DBConnectionManager(Context context)
     {
-        super(context, DATABASE_NAME , null, DATABASE_VERSION);
+        super(context, Constant.DATABASE_NAME, null, Constant.DATABASE_VERSION);
     }
 
     // Called when the database is created for the first time.
