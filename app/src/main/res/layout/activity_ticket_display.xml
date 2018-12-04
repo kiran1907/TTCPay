@@ -11,17 +11,30 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        android:background="@color/layoutBackground">
 
-       <ImageButton
-           android:layout_width="match_parent"
-           android:layout_height="match_parent"
-           android:background="@color/red6"
-           />
+        <ImageButton
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/layoutBackground"
+            />
 
 
 
     </RelativeLayout>
+
+    <TableLayout
+        android:id="@+id/ticketTable"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="35dp"
+        android:stretchColumns="*">
+
+    </TableLayout>
 
 
     <android.support.design.widget.NavigationView

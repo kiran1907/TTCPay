@@ -29,7 +29,9 @@
         <activity android:name=".CategoriesActivity" />
         <activity android:name=".PassCategoryActivity" />
         <activity android:name=".TicketDisplayActivity" />
-        <activity android:name=".ShowPassesActivity"></activity>
+        <activity android:name=".ShowPassesActivity" />
+        <activity android:name=".Util.ShowTicketActivity" />
+        <activity android:name=".ShowTicketActivity"></activity>
     </application>
 
 </manifest>

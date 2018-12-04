@@ -37,9 +37,9 @@ public class MainActivity extends AppCompatActivity {
         String userName=session.getusename();
 
         if("GUEST".equalsIgnoreCase(userName))
-            usernameTextView.setText("Welcome Guest User!");
+            usernameTextView.setText("Welcome User!");
         else
-            usernameTextView.setText("Welcome User Name!");
+            usernameTextView.setText("Welcome User ");
 
         dl = (DrawerLayout)findViewById(R.id.activity_main);
         t = new ActionBarDrawerToggle(this, dl,R.string.Open, R.string.Close);

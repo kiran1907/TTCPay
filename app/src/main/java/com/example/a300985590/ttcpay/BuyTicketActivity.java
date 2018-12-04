@@ -157,6 +157,31 @@ public class BuyTicketActivity extends AppCompatActivity {
             }
         });
 
+        proceedBtn.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                intent=new Intent(BuyTicketActivity.this,TicketDisplayActivity.class);
+                Bundle bundle = new Bundle();
+                if(adultQuantityCount > 0){
+                    bundle.putDouble("adultPrice",adultQuantityCount*adultPrice);
+                    // bundle.putString("TicketName","AdultTicket");
+                    bundle.putInt("adultTicketCount",adultQuantityCount);
+                    intent.putExtras(bundle);
+                }
+                if(seniorQuantityCount > 0){
+                    bundle.putDouble("seniorPrice",seniorQuantityCount*seniorPrice);
+                    // bundle.putString("TicketName","SeniorTicket");
+                    bundle.putInt("seniorTicketCount",seniorQuantityCount);
+                    intent.putExtras(bundle);
+                }
+                if(studentQuantityCount > 0){
+                    bundle.putDouble("studentPrice",studentQuantityCount*studentPrice);
+                    // bundle.putString("TicketName","StudentTicket");
+                    bundle.putInt("studentTicketCount",studentQuantityCount);
+                    intent.putExtras(bundle);
+                }
+                startActivity(intent);
+            }
+        });
 
 
     }
