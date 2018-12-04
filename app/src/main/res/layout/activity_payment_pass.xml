@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".PaymentPassActivity">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/layoutBackground"
+    android:orientation="vertical"
+    style="@style/AppTheme"
+    android:weightSum="1"
+    android:id="@+id/linearLayout2">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentTop="true"
+        android:background="@color/red"
+        android:orientation="horizontal"
+        android:id="@+id/linearLayout"
+        android:weightSum="1">
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/app_icon"
+            android:layout_weight="0.07" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|center_vertical"
+            android:layout_marginLeft="25dp"
+            android:text="Payment Method"
+            android:textColor="@color/white"
+            android:textSize="24dp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <RadioGroup
+        android:id="@+id/userRadioGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_marginTop="30dp"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/guestUser"
+            android:layout_width="147dp"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="Credit Card" />
+
+        <RadioButton
+            android:id="@+id/registerUser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:text="Debit Card" />
+
+    </RadioGroup>
+
+    <EditText android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:hint="Card Number"
+        android:id="@+id/cardNumberEditText"
+        android:background="#f3f3f3"
+        android:paddingLeft="5dp"
+        android:layout_marginTop="30dp"/>
+
+
+    <EditText android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:hint="Expiry Date"
+        android:inputType="text"
+        android:id="@+id/expiryDateEditText"
+        android:background="#f3f3f3"
+        android:paddingLeft="5dp"
+        android:layout_marginTop="15dp"/>
+
+    <EditText android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:hint="CVV Code"
+        android:inputType="text"
+        android:id="@+id/cvvEditText"
+        android:background="#f3f3f3"
+        android:paddingLeft="5dp"
+        android:layout_marginTop="15dp"/>
+
+    <Button
+        android:id="@+id/btnPaymentProceed"
+        android:layout_width="match_parent"
+        android:layout_height="38dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/red"
+        android:text="Proceed"
+        android:textColor="@color/white"
+        android:textSize="13dp" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="502dp"
+        android:layout_marginBottom="30dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:background="@drawable/greybackground"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:weightSum="1"
+        android:layout_below="@+id/linearLayout"
+        android:layout_alignEnd="@+id/linearLayout2"
+        android:layout_alignParentStart="true">
+    </LinearLayout>
+
+
+</LinearLayout>
+
+
+</RelativeLayout>
+

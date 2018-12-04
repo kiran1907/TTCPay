@@ -179,6 +179,8 @@ public class BuyTicketActivity extends AppCompatActivity {
                     bundle.putInt("studentTicketCount",studentQuantityCount);
                     intent.putExtras(bundle);
                 }
+                Toast toast = Toast.makeText(getApplicationContext(),"PAYMENT RECIEVED",Toast.LENGTH_SHORT);
+                toast.show();
                 startActivity(intent);
             }
         });

@@ -201,7 +201,7 @@
             android:layout_marginTop="500dp"
             android:background="@color/red"
             android:visibility="invisible"
-            android:text="PROCEED TO PAY"
+            android:text="PROCEED"
             android:textColor="@color/white"
             android:textSize="18dp" />
 

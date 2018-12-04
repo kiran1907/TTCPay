@@ -112,12 +112,12 @@ public class MainActivity extends AppCompatActivity {
         switch (view.getId()) {
             case R.id.buyTicketBtn:
 
-                intent=new Intent(getApplicationContext(),BuyTicketActivity.class);
+                intent=new Intent(getApplicationContext(),PaymentActivity.class);
                 startActivity(intent);
 
                 break;
             case R.id.buyPassBtn:
-                intent=new Intent(getApplicationContext(),BuyPassActivity.class);
+                intent=new Intent(getApplicationContext(),PaymentPassActivity.class);
                 startActivity(intent);
                 break;
             case R.id.availTicketBtn:

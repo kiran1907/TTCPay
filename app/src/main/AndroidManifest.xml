@@ -31,7 +31,9 @@
         <activity android:name=".TicketDisplayActivity" />
         <activity android:name=".ShowPassesActivity" />
         <activity android:name=".Util.ShowTicketActivity" />
-        <activity android:name=".ShowTicketActivity"></activity>
+        <activity android:name=".ShowTicketActivity" />
+        <activity android:name=".PaymentActivity" />
+        <activity android:name=".PaymentPassActivity"></activity>
     </application>
 
 </manifest>

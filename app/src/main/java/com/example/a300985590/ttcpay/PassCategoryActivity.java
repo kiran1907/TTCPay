@@ -197,6 +197,8 @@ public class PassCategoryActivity extends AppCompatActivity {
                     bundle.putInt("dailyCount",dailyPassQuantityCount);
                     intent.putExtras(bundle);
                 }
+                Toast toast = Toast.makeText(getApplicationContext(),"PAYMENT RECIEVED",Toast.LENGTH_SHORT);
+                toast.show();
                 startActivity(intent);
             }
         });
