@@ -18,6 +18,7 @@ public class TicketDisplayActivity extends AppCompatActivity {
 
     private DrawerLayout d;
     private ActionBarDrawerToggle tg;
+
     private NavigationView n;
     private TableLayout ticketTableLayout;
     double adultPrice = 0, seniorPrice = 0, studentPrice = 0;
@@ -86,6 +87,27 @@ public class TicketDisplayActivity extends AppCompatActivity {
         ticketTableLayout.setStretchAllColumns(true);
         startLoadData();
     }
+    public void  backToMain(View v)
+    {
+        Intent intent=new Intent(getApplicationContext(), MainActivity.class);
+        startActivity(intent);
+
+    }
+    public void openPayment(View v)
+    {
+    Intent intent=new Intent(getApplicationContext(), PaymentActivity.class);
+    startActivity(intent);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        if(tg.onOptionsItemSelected(item))
+            return true;
+
+        return super.onOptionsItemSelected(item);
+    }
+
 
     public void startLoadData() {
 
@@ -100,6 +122,9 @@ public class TicketDisplayActivity extends AppCompatActivity {
         adultCount = bundle.getInt("adultTicketCount");
         seniorCount = bundle.getInt("seniorTicketCount");
         studentCount = bundle.getInt("studentTicketCount");
+
+
+
 
 
        /* final TextView textView = new TextView(this);
@@ -197,7 +222,7 @@ public class TicketDisplayActivity extends AppCompatActivity {
             tableRow.addView(textView11);
             tableRow.addView(textView2);
             tableRow.addView(textView3);
-            tableRow.setOnClickListener(new View.OnClickListener() {
+            /*tableRow.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     TableRow tr = (TableRow) view;
@@ -211,7 +236,7 @@ public class TicketDisplayActivity extends AppCompatActivity {
                     intentView.putExtras(bun);
                     startActivity(intentView);
                 }
-            });
+            });*/
 
             ticketTableLayout.addView(tableRow, trParams);
 
@@ -227,7 +252,7 @@ public class TicketDisplayActivity extends AppCompatActivity {
             tableRow1.addView(textView10);
             tableRow1.addView(textView6);
             tableRow1.addView(textView4);
-            tableRow1.setOnClickListener(new View.OnClickListener() {
+            /*tableRow1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     TableRow tr = (TableRow) view;
@@ -240,7 +265,7 @@ public class TicketDisplayActivity extends AppCompatActivity {
                     intentView.putExtras(bun);
                     startActivity(intentView);
                 }
-            });
+            });*/
 
             ticketTableLayout.addView(tableRow1, trParams);
 
@@ -256,7 +281,7 @@ public class TicketDisplayActivity extends AppCompatActivity {
             tableRow3.addView(textView12);
             tableRow3.addView(textView7);
             tableRow3.addView(textView5);
-            tableRow3.setOnClickListener(new View.OnClickListener() {
+            /*tableRow3.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     TableRow tr = (TableRow) view;
@@ -269,11 +294,10 @@ public class TicketDisplayActivity extends AppCompatActivity {
                     intentView.putExtras(bun);
                     startActivity(intentView);
                 }
-            });
+            });*/
 
             ticketTableLayout.addView(tableRow3, trParams);
         }
-
 
     }
 }

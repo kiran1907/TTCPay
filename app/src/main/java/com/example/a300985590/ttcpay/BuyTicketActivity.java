@@ -159,7 +159,7 @@ public class BuyTicketActivity extends AppCompatActivity {
 
         proceedBtn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                intent=new Intent(BuyTicketActivity.this,TicketDisplayActivity.class);
+                intent=new Intent(BuyTicketActivity.this,PaymentActivity.class);
                 Bundle bundle = new Bundle();
                 if(adultQuantityCount > 0){
                     bundle.putDouble("adultPrice",adultQuantityCount*adultPrice);
@@ -173,14 +173,15 @@ public class BuyTicketActivity extends AppCompatActivity {
                     bundle.putInt("seniorTicketCount",seniorQuantityCount);
                     intent.putExtras(bundle);
                 }
-                if(studentQuantityCount > 0){
+                if(studentQuantityCount > 0)
+                {
                     bundle.putDouble("studentPrice",studentQuantityCount*studentPrice);
                     // bundle.putString("TicketName","StudentTicket");
                     bundle.putInt("studentTicketCount",studentQuantityCount);
                     intent.putExtras(bundle);
                 }
-                Toast toast = Toast.makeText(getApplicationContext(),"PAYMENT RECIEVED",Toast.LENGTH_SHORT);
-                toast.show();
+               /* Toast toast = Toast.makeText(getApplicationContext(),"PAYMENT RECIEVED",Toast.LENGTH_SHORT);
+                toast.show();*/
                 startActivity(intent);
             }
         });

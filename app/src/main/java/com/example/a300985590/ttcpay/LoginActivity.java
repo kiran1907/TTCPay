@@ -1,6 +1,8 @@
 package com.example.a300985590.ttcpay;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -10,26 +12,75 @@ import android.widget.Toast;
 
 public class LoginActivity extends AppCompatActivity {
 
+    public static final String MyPREFERENCES = "MyPrefs" ;
+    public static final String ORDERPREFERENCE = "OrderPrefs" ;
+
+    SharedPreferences sharedpreferences;
+
+    private Session session;//global variable
+
+    final String userNameArray[]={"Shiva","Sidharth","Bob"};//add more username for static code
+
+    final String passwordArray[]={"shiva123","sid123","bob123"};
+
+    public void clearSharedPreferences(String name)
+    {
+        SharedPreferences preferences =getSharedPreferences(name,Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.clear();
+        editor.commit();
+        finish();
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_login);
         getSupportActionBar().hide(); //hide the title bar
 
+        clearSharedPreferences(MyPREFERENCES);
+        clearSharedPreferences(ORDERPREFERENCE);
+
+
+        session = new Session(this);
+
         Button btnSignIn = findViewById(R.id.btnSignIn);
+
         final EditText username = findViewById(R.id.nameeditText);
+
         final EditText password = findViewById(R.id.passeditText);
+
         btnSignIn.setOnClickListener(new View.OnClickListener() {
+
             public void onClick(View v) {
-                if(username.getText().toString().equals("Bob") && password.getText().toString().equals("bob123")){
-                    Intent intent2=new Intent(getApplicationContext(),MainActivity.class);
-                    startActivity(intent2);
-                } else {
-                    Toast toast = Toast.makeText(getApplicationContext(),"Username or password is incorrect",Toast.LENGTH_SHORT);
-                     toast.show();
+
+                String enteredUserName=username.getText().toString();
+
+                String enteredPassword=password.getText().toString();
+
+                boolean isValidUser=false;
+
+                for(int i=0;i<userNameArray.length;i++)
+                {
+                    if(username.getText().toString().equalsIgnoreCase(userNameArray[i]) && password.getText().toString().equalsIgnoreCase(passwordArray[i]))
+                    {
+                        Intent intent2=new Intent(getApplicationContext(),MainActivity.class);
+                        session.setusename(userNameArray[i]);
+                        isValidUser=true;
+                        startActivity(intent2);
+                        break;
+                    }
+                }
+                if(!isValidUser)
+                {
+
+                        Toast toast = Toast.makeText(getApplicationContext(),"Username or password is incorrect",Toast.LENGTH_SHORT);
+                        toast.show();
+
                 }
             }
-
         });
     }
 

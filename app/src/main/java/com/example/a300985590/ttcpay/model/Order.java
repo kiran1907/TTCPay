@@ -12,7 +12,7 @@ public class Order {
 
     public String createdDate;
 
-    public int createdBy;
+    public String createdBy;
 
     public int getOrderId() {
         return orderId;
@@ -46,11 +46,11 @@ public class Order {
         this.createdDate = createdDate;
     }
 
-    public int getCreatedBy() {
+    public String getCreatedBy() {
         return createdBy;
     }
 
-    public void setCreatedBy(int createdBy) {
+    public void setCreatedBy(String createdBy) {
         this.createdBy = createdBy;
     }
 }

@@ -1,6 +1,8 @@
 package com.example.a300985590.ttcpay;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
@@ -16,13 +18,13 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
 
     private DrawerLayout dl;
+
     private ActionBarDrawerToggle t;
-    private Session session;//global variable
+
+    private Session session;
+    ;//global variable
 
     private TextView usernameTextView;
-
-
-
 
     private NavigationView nv;
 
@@ -37,9 +39,9 @@ public class MainActivity extends AppCompatActivity {
         String userName=session.getusename();
 
         if("GUEST".equalsIgnoreCase(userName))
-            usernameTextView.setText("Welcome User!");
+            usernameTextView.setText("Welcome Guest User!");
         else
-            usernameTextView.setText("Welcome User ");
+            usernameTextView.setText("Welcome "+userName+"!");
 
         dl = (DrawerLayout)findViewById(R.id.activity_main);
         t = new ActionBarDrawerToggle(this, dl,R.string.Open, R.string.Close);
@@ -91,7 +93,6 @@ public class MainActivity extends AppCompatActivity {
                         return true;
                 }
                 return  true;
-
             }
         });
 
@@ -112,12 +113,12 @@ public class MainActivity extends AppCompatActivity {
         switch (view.getId()) {
             case R.id.buyTicketBtn:
 
-                intent=new Intent(getApplicationContext(),PaymentActivity.class);
+                intent=new Intent(getApplicationContext(),BuyTicketActivity.class);
                 startActivity(intent);
 
                 break;
             case R.id.buyPassBtn:
-                intent=new Intent(getApplicationContext(),PaymentPassActivity.class);
+                intent=new Intent(getApplicationContext(),BuyPassActivity.class);
                 startActivity(intent);
                 break;
             case R.id.availTicketBtn:

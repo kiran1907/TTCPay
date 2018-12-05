@@ -3,7 +3,7 @@
 
     <item android:id="@+id/home"  android:icon="@drawable/home" android:title="Home"/>
     <item android:id="@+id/buyTickets" android:icon="@drawable/buyticket" android:title="Buy Tickets"/>
-    <item android:id="@+id/useTickets" android:icon="@drawable/tickets" android:title="Use Tickets"/>
+    <item android:id="@+id/useTickets" android:icon="@drawable/tickets" android:title="Available Tickets"/>
     <item android:id="@+id/transitApp" android:icon="@drawable/googlemap" android:title="Transit App"/>
     <item android:id="@+id/moreInfo" android:icon="@drawable/infoicon" android:title="More Information"/>
     <item android:id="@+id/settings" android:icon="@drawable/settings" android:title="Settings"/>
