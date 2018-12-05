@@ -167,7 +167,7 @@ public class PassCategoryActivity extends AppCompatActivity {
 
         proceedBtn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                intent=new Intent(PassCategoryActivity.this,AvailablePassesActivity.class);
+                intent=new Intent(PassCategoryActivity.this,PaymentPassActivity.class);
                 Bundle bundle = new Bundle();
                 if(monthlyPrice == 150){
                     bundle.putDouble("monthlyPrice",monthlyPassQuantityCount*monthlyPrice);
@@ -197,8 +197,8 @@ public class PassCategoryActivity extends AppCompatActivity {
                     bundle.putInt("dailyCount",dailyPassQuantityCount);
                     intent.putExtras(bundle);
                 }
-                Toast toast = Toast.makeText(getApplicationContext(),"PAYMENT RECIEVED",Toast.LENGTH_SHORT);
-                toast.show();
+                /*Toast toast = Toast.makeText(getApplicationContext(),"PAYMENT RECIEVED",Toast.LENGTH_SHORT);
+                toast.show();*/
                 startActivity(intent);
             }
         });
