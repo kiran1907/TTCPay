@@ -36,8 +36,10 @@ public class UserTypeActivity extends AppCompatActivity {
 
         String selectedRadioButton=radioButton.getText().toString();//code to get text of selected radio button
 
-        //Toast.makeText(UserTypeActivity.this,
-        //       radioButton.getText(), Toast.LENGTH_SHORT).show();
+       // Toast.makeText(UserTypeActivity.this, radioButton.getText(), Toast.LENGTH_SHORT).show();
+
+        try{
+
 
         if("Registered User".equalsIgnoreCase(selectedRadioButton))
         {
@@ -48,6 +50,10 @@ public class UserTypeActivity extends AppCompatActivity {
         {
             Intent intent2=new Intent(getApplicationContext(),MainActivity.class);
             startActivity(intent2);
+        }}
+        catch (Exception e)
+        {
+            Toast.makeText(UserTypeActivity.this, e.getMessage(), Toast.LENGTH_LONG).show();
         }
     }
 

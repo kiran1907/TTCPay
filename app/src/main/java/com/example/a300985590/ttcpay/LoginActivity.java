@@ -15,6 +15,7 @@ public class LoginActivity extends AppCompatActivity {
     public static final String MyPREFERENCES = "MyPrefs" ;
     public static final String ORDERPREFERENCE = "OrderPrefs" ;
 
+
     SharedPreferences sharedpreferences;
 
     private Session session;//global variable
@@ -23,7 +24,7 @@ public class LoginActivity extends AppCompatActivity {
 
     final String passwordArray[]={"shiva123","sid123","bob123"};
 
-    public void clearSharedPreferences(String name)
+    /*public void clearSharedPreferences(String name)
     {
         SharedPreferences preferences =getSharedPreferences(name,Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = preferences.edit();
@@ -31,17 +32,21 @@ public class LoginActivity extends AppCompatActivity {
         editor.commit();
         finish();
     }
-
+*/
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_login);
+
         getSupportActionBar().hide(); //hide the title bar
 
-        clearSharedPreferences(MyPREFERENCES);
-        clearSharedPreferences(ORDERPREFERENCE);
+
+        //Toast.makeText(LoginActivity.this, "Inside Login", Toast.LENGTH_SHORT).show();
+
+        //clearSharedPreferences(MyPREFERENCES);
+        //clearSharedPreferences(ORDERPREFERENCE);
 
 
         session = new Session(this);
@@ -88,7 +93,5 @@ public class LoginActivity extends AppCompatActivity {
         Intent intent2=new Intent(getApplicationContext(),RegistrationActivity.class);
         startActivity(intent2);
     }
-
-
 
 }
