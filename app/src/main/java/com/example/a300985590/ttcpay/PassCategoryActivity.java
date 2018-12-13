@@ -102,7 +102,7 @@ public class PassCategoryActivity extends AppCompatActivity {
                         startActivity(intent);
                         break;
                     case R.id.moreInfo:
-                        intent=new Intent(getApplicationContext(),MoreInfoActivity.class);
+                        intent=new Intent(getApplicationContext(),FeedbackActivity.class);
                         startActivity(intent);
                         break;
                     case R.id.settings:
