@@ -31,10 +31,6 @@ public class AdminMainScreen extends AppCompatActivity {
                                     long id) {
                 String itemselectedname = (String) parent.getItemAtPosition(position);
 
-                /*Toast toast = Toast.makeText(getApplicationContext(),"Selected Option is :"+itemselectedname,Toast.LENGTH_SHORT);
-                toast.show();
-                */
-
                 if("Access Users".equalsIgnoreCase(itemselectedname))
                 {
                     Intent intent = new Intent(AdminMainScreen.this, ViewUsers.class);

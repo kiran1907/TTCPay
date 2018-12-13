@@ -32,9 +32,6 @@ public class CategoriesActivity extends AppCompatActivity {
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-
-        //fragment=(FragmentActivity)findViewById(R.id.activity_avail_pass);
-
         nv = (NavigationView) findViewById(R.id.nv);
         nv.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override

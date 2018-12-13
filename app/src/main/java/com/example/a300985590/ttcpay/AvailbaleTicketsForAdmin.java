@@ -33,11 +33,6 @@ public class AvailbaleTicketsForAdmin extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_availbale_tickets_for_admin);
 
-      /*  dl = (DrawerLayout)findViewById(R.id.activity_avail_ticket);
-        t = new ActionBarDrawerToggle(this, dl,R.string.Open, R.string.Close);
-
-        dl.addDrawerListener(t);
-        t.syncState();*/
        showList();
 
     }
@@ -90,13 +85,7 @@ public class AvailbaleTicketsForAdmin extends AppCompatActivity {
                                             int position, long id) {
 
                         // TODO Auto-generated method stub
-                        //String Slecteditem= ticketType[+position];
-                        //Toast.makeText(getApplicationContext(), Slecteditem, Toast.LENGTH_SHORT).show();
 
-                       /* Intent intent=null;
-                        intent=new Intent(getApplicationContext(),TicketDisplayActivity.class);
-                        startActivity(intent);
-                        */
 
                     }
                 });

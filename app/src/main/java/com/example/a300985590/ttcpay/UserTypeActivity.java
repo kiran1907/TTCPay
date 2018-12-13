@@ -36,7 +36,6 @@ public class UserTypeActivity extends AppCompatActivity {
 
         String selectedRadioButton=radioButton.getText().toString();//code to get text of selected radio button
 
-       // Toast.makeText(UserTypeActivity.this, radioButton.getText(), Toast.LENGTH_SHORT).show();
 
         try{
 

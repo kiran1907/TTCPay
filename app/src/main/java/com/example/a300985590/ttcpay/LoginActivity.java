@@ -24,15 +24,7 @@ public class LoginActivity extends AppCompatActivity {
 
     final String passwordArray[]={"shiva123","sid123","bob123","admin123"};
 
-    /*public void clearSharedPreferences(String name)
-    {
-        SharedPreferences preferences =getSharedPreferences(name,Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = preferences.edit();
-        editor.clear();
-        editor.commit();
-        finish();
-    }
-*/
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -41,12 +33,6 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         getSupportActionBar().hide(); //hide the title bar
-
-
-        //Toast.makeText(LoginActivity.this, "Inside Login", Toast.LENGTH_SHORT).show();
-
-        //clearSharedPreferences(MyPREFERENCES);
-        //clearSharedPreferences(ORDERPREFERENCE);
 
 
         session = new Session(this);

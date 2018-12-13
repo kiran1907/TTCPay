@@ -127,11 +127,7 @@ public class TicketDisplayActivity extends AppCompatActivity {
 
 
 
-       /* final TextView textView = new TextView(this);
-        textView.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
-        textView.setGravity(Gravity.LEFT);
-        textView.setPadding(5, 15, 0, 15);
-        textView.setText(student);*/
+
 
         final TextView textView2 = new TextView(this);
         textView2.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
@@ -169,18 +165,7 @@ public class TicketDisplayActivity extends AppCompatActivity {
         textView7.setPadding(5, 15, 0, 15);
         textView7.setText("  $" + Double.toString(seniorPrice));
 
-       /* final TextView textView8 = new TextView(this);
-        textView8.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
-        textView8.setGravity(Gravity.LEFT);
-        textView8.setPadding(5, 15, 0, 15);
-        textView8.setText(adult);
 
-        final TextView textView9 = new TextView(this);
-        textView9.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
-        textView9.setGravity(Gravity.LEFT);
-        textView9.setPadding(5, 15, 0, 15);
-        textView9.setText(senior);
-        */
 
         final TextView textView10 = new TextView(this);
         textView10.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT,TableRow.LayoutParams.WRAP_CONTENT));
@@ -222,21 +207,7 @@ public class TicketDisplayActivity extends AppCompatActivity {
             tableRow.addView(textView11);
             tableRow.addView(textView2);
             tableRow.addView(textView3);
-            /*tableRow.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    TableRow tr = (TableRow) view;
-                    Intent intentView = new Intent(TicketDisplayActivity.this, ShowTicketActivity.class);
 
-                    Bundle bun = new Bundle();
-                    bun.putDouble("studentPrice", studentPrice);
-                    bun.putInt("studentCount", studentCount);
-                    bun.putString("student", student);
-                    // bun.putString("ticketCategory", student);
-                    intentView.putExtras(bun);
-                    startActivity(intentView);
-                }
-            });*/
 
             ticketTableLayout.addView(tableRow, trParams);
 
@@ -252,20 +223,7 @@ public class TicketDisplayActivity extends AppCompatActivity {
             tableRow1.addView(textView10);
             tableRow1.addView(textView6);
             tableRow1.addView(textView4);
-            /*tableRow1.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    TableRow tr = (TableRow) view;
-                    Intent intentView = new Intent(TicketDisplayActivity.this, ShowTicketActivity.class);
-                    Bundle bun = new Bundle();
-                    bun.putDouble("adultPrice", adultPrice);
-                    bun.putInt("adultCount", adultCount);
-                    bun.putString("adult", adult);
-                    //  bun.putString("ticketCategory", adult);
-                    intentView.putExtras(bun);
-                    startActivity(intentView);
-                }
-            });*/
+
 
             ticketTableLayout.addView(tableRow1, trParams);
 
@@ -281,20 +239,7 @@ public class TicketDisplayActivity extends AppCompatActivity {
             tableRow3.addView(textView12);
             tableRow3.addView(textView7);
             tableRow3.addView(textView5);
-            /*tableRow3.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    TableRow tr = (TableRow) view;
-                    Intent intentView = new Intent(TicketDisplayActivity.this, ShowTicketActivity.class);
-                    Bundle bun = new Bundle();
-                    bun.putDouble("seniorPrice", seniorPrice);
-                    bun.putInt("seniorCount", seniorCount);
-                    bun.putString("senior", senior);
-                    //bun.putString("ticketCategory", senior);
-                    intentView.putExtras(bun);
-                    startActivity(intentView);
-                }
-            });*/
+
 
             ticketTableLayout.addView(tableRow3, trParams);
         }

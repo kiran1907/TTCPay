@@ -8,12 +8,15 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.RelativeLayout;
 
 public class SettingsActivity extends AppCompatActivity {
 
     private DrawerLayout dl;
     private ActionBarDrawerToggle t;
     private NavigationView nv;
+
+    private RelativeLayout rl;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +28,8 @@ public class SettingsActivity extends AppCompatActivity {
 
         dl.addDrawerListener(t);
         t.syncState();
+
+        rl=(RelativeLayout)findViewById(R.id.profileManagementSection);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
