@@ -1,4 +1,3 @@
-
 package com.example.a300985590.ttcpay;
 
 import android.content.Intent;
@@ -9,21 +8,22 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Toast;
 
-public class MoreInfoActivity extends AppCompatActivity {
-
+public class FeedbackActivity extends AppCompatActivity {
 
     private DrawerLayout dl;
     private ActionBarDrawerToggle t;
     private NavigationView nv;
+    private Intent intent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_more_info);
+        setContentView(R.layout.activity_feedback);
 
-
-        /*getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         nv = (NavigationView)findViewById(R.id.nv);
         nv.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
@@ -70,18 +70,22 @@ public class MoreInfoActivity extends AppCompatActivity {
 
             }
         });
-*/
-
-
 
     }
-
-    /*@Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item)
+    {
         if(t.onOptionsItemSelected(item))
             return true;
 
         return super.onOptionsItemSelected(item);
-    }*/
+    }
+
+    public void feedbackSubmit(View v)
+    {
+        Toast toast = Toast.makeText(getApplicationContext(),"Thank you for your valuable feedback!",Toast.LENGTH_SHORT);
+                toast.show();
+        intent=new Intent(FeedbackActivity.this,MainActivity.class);
+        startActivity(intent);
+    }
 }

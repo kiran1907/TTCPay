@@ -24,7 +24,7 @@
         <activity android:name=".BuyPassActivity" />
         <activity android:name=".AvailableTicketActivity" />
         <activity android:name=".AvailablePassesActivity" />
-        <activity android:name=".MoreInfoActivity" />
+        <activity android:name=".foActivity" />
         <activity android:name=".SettingsActivity" />
         <activity android:name=".CategoriesActivity" />
         <activity android:name=".PassCategoryActivity" />
@@ -33,7 +33,11 @@
         <activity android:name=".Util.ShowTicketActivity" />
         <activity android:name=".ShowTicketActivity" />
         <activity android:name=".PaymentActivity" />
-        <activity android:name=".PaymentPassActivity"></activity>
+        <activity android:name=".PaymentPassActivity" />
+        <activity android:name=".FeedbackActivity" />
+        <activity android:name=".AdminMainScreen" />
+        <activity android:name=".ViewUsers" />
+        <activity android:name=".AvailbaleTicketsForAdmin"></activity>
     </application>
 
 </manifest>

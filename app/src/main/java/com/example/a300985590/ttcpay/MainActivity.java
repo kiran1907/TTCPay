@@ -36,6 +36,8 @@ public class MainActivity extends AppCompatActivity {
         usernameTextView=(TextView)findViewById(R.id.usernameTextView);
         session = new Session(this);
 
+        System.out.println("Inside Main Activity ");
+
         String userName=session.getusename();
 
         if("GUEST".equalsIgnoreCase(userName))
@@ -76,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
                         startActivity(intent);
                         break;
                     case R.id.moreInfo:
-                        intent=new Intent(getApplicationContext(),MoreInfoActivity.class);
+                        intent=new Intent(getApplicationContext(),FeedbackActivity.class);
                         startActivity(intent);
                         break;
                     case R.id.settings:
