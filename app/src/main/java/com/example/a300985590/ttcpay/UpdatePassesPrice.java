@@ -7,16 +7,14 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
 
-public class AdminMainScreen extends AppCompatActivity {
-
-    String[] usersArray = {"Access Users","Access Tickets","Update tickets/passes price"};
+public class UpdatePassesPrice extends AppCompatActivity {
+    String[] usersArray = {"Student Pass","Adult Pass","Senior Pass"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_admin_main_screen);
+        setContentView(R.layout.activity_update_passes_price);
 
         ArrayAdapter adapter = new ArrayAdapter<String>(this,
                 R.layout.admin_options, usersArray);
@@ -31,20 +29,20 @@ public class AdminMainScreen extends AppCompatActivity {
                                     long id) {
                 String itemselectedname = (String) parent.getItemAtPosition(position);
 
-                if("Access Users".equalsIgnoreCase(itemselectedname))
+                if("Student Pass".equalsIgnoreCase(itemselectedname))
                 {
-                    Intent intent = new Intent(AdminMainScreen.this, ViewUsers.class);
+                    Intent intent = new Intent(UpdatePassesPrice.this, StudentPassUpdate.class);
                     startActivity(intent);
                 }
-                if("Access Tickets".equalsIgnoreCase(itemselectedname))
+                if("Adult Pass".equalsIgnoreCase(itemselectedname))
                 {
-                    Intent intent = new Intent(AdminMainScreen.this, AvailbaleTicketsForAdmin.class);
+                    Intent intent = new Intent(UpdatePassesPrice.this, AdultPassUpdate.class);
                     startActivity(intent);
                 }
 
-                if("Update tickets/passes price".equalsIgnoreCase(itemselectedname))
+                if("Senior Pass".equalsIgnoreCase(itemselectedname))
                 {
-                    Intent intent = new Intent(AdminMainScreen.this, UpdatePassesPrice.class);
+                    Intent intent = new Intent(UpdatePassesPrice.this, SeniorPassUpdate.class);
                     startActivity(intent);
                 }
 
@@ -54,6 +52,4 @@ public class AdminMainScreen extends AppCompatActivity {
 
 
     }
-
-
 }

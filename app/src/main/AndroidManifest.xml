@@ -37,7 +37,12 @@
         <activity android:name=".FeedbackActivity" />
         <activity android:name=".AdminMainScreen" />
         <activity android:name=".ViewUsers" />
-        <activity android:name=".AvailbaleTicketsForAdmin"></activity>
+        <activity android:name=".AvailbaleTicketsForAdmin" />
+        <activity android:name=".UpdatePassesPrice" />
+        <activity android:name=".StudentPassUpdate" />
+        <activity android:name=".AdultPassUpdate" />
+        <activity android:name=".SeniorPassUpdate" />
+        <activity android:name=".UpdatedStudentPass"></activity>
     </application>
 
 </manifest>
